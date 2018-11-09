@@ -1,4 +1,3 @@
-Washtype Temperature Option1 Option2 Time
 Cotton 90 none0 none1 170
 Cotton 90 none0 circle 200
 Cotton 90 none0 updrain 185
