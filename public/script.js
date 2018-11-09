@@ -24,18 +24,18 @@ $(document).ready(function(){
 
     console.log(data);
     $.ajax({
-               type: 'post',
-               url: '/save',
-               contentType : "application/json",
-               data: JSON.stringify(data),
-               dataType: 'json',
-               error: function(err){
-                 console.log(err);
-               },
-               success: function (res) {
-                 console.log(res);
-                alert("We got your submission");
-               }
+         type: 'post',
+         url: '/save',
+         contentType : "application/json",
+         data: JSON.stringify(data),
+         dataType: 'json',
+         error: function(err){
+           console.log(err);
+         },
+         success: function (res) {
+           console.log(res);
+          alert("We got your submission");
+         }
        });
        // e.preventDefault();
      });
