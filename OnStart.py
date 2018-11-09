@@ -8,6 +8,7 @@ cursor=conn.cursor()
 machine_ID=int(sys.argv[1])
 duration=int(sys.argv[2])
 uid=sys.argv[3]
+print(machine_ID, duration, uid)
 
 sql_string="INSERT INTO `Machines` VALUES (?,?,?,?)"
 now_dt=datetime.datetime.utcnow()

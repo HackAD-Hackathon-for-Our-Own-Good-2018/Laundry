@@ -4,7 +4,6 @@ $(document).ready(function(){
     var building = $('#building').val();
     var washtype = $('#washtype').val();
     var time = $('#time').val();
-    console.log('here');
     var data = {
       netID: netID,
       building: building,
