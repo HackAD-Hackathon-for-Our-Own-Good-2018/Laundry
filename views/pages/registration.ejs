@@ -46,29 +46,34 @@
 		<!-- Temperature -->
 		<div id="temperature">
 			<h2>Temperature (Celsius): </h2>
-			<label><input type="radio" name="temp" value="90">90</label>
-			<label><input type="radio" name="temp" value="60">60</label>
-			<label><input type="radio" name="temp" value="40">40</label>
-			<label><input type="radio" name="temp" value="30">30</label>
-			<label><input type="radio" name="temp" value="15">15</label>
-			<label><input type="radio" name="temp" value="cold">Cold</label>
+			<select name="temp">
+			<option value="90">90</option>
+			<option value="60">60</option>
+			<option value="40">40</option>
+			<option value="30">30</option>
+			<option value="15">15</option>
+			<option value="cold">Cold</option>
+			</select>
 		</div>
 
 		<!-- Other Options -->
 		<div id="otherOptions">
 			<h2>Other Options: </h2>
-			<label><input type="radio" name="other options" value="none0">None</label>
-			<label><input type="radio" name="other options" value="leaf">Leaf</label>
-			<label><input type="radio" name="other options" value="drain">Drain</label>
-			<label><input type="radio" name="other options" value="clock">Clock thingo</label>
+			<select name="other options">
+			<option value="none0">None</option>
+			<option value="leaf">Leaf</option>
+			<option value="drain">Drain</option>
+			<option value="clock">Clock thingo</option>
+			</select>
 		</div>
 
 		<div id="otherOtherOptions">
 			<h2>Other Other Options: </h2>
-			<label><input type="radio" name="other other options" value="none1">None</label>
-			<label><input type="radio" name="other other options" value="updrain">Updrain</label>
-			<label><input type="radio" name="other other options" value="circle dot">Circle dot</label>
-
+			<select name="other other options">
+			<option value="none1">None</option>
+			<option value="updrain">Updrain</option>
+			<option value="circle dot">Circle dot</option>
+			</select>
 		</div>
 
 		<!-- Manual time -->
@@ -81,7 +86,6 @@
 
 		<button type="submit">Submit</button>
 	</form>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="script.js"></script>
+
 </body>
 </html>
