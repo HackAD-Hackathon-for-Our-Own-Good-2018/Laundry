@@ -25,7 +25,7 @@
 
 		<!-- Net ID -->
 		<div>
-			<h2>Net ID: <input type="text" name="Net ID: " placeholder="netid" required></h2>
+			<h2>Net ID: <input type="text" name="Net ID: " placeholder="Net ID" required></h2>
 		</div>
 
 		<!-- Building -->
@@ -47,29 +47,34 @@
 		<!-- Temperature -->
 		<div>
 			<h2>Temperature (Celsius): </h2>
-			<label><input type="radio" name="temp" value="90">90</label>
-			<label><input type="radio" name="temp" value="60">60</label>
-			<label><input type="radio" name="temp" value="40">40</label>
-			<label><input type="radio" name="temp" value="30">30</label>
-			<label><input type="radio" name="temp" value="15">15</label>
-			<label><input type="radio" name="temp" value="cold">Cold</label>
+			<select name="temp">
+			<option value="90">90</option>
+			<option value="60">60</option>
+			<option value="40">40</option>
+			<option value="30">30</option>
+			<option value="15">15</option>
+			<option value="cold">Cold</option>
+			</select>
 		</div>
 
 		<!-- Other Options -->
 		<div>
 			<h2>Other Options: </h2>
-			<label><input type="radio" name="other options" value="none0">None</label>
-			<label><input type="radio" name="other options" value="leaf">Leaf</label>
-			<label><input type="radio" name="other options" value="drain">Drain</label>
-			<label><input type="radio" name="other options" value="clock">Clock thingo</label>
+			<select name="other options">
+			<option value="none0">None</option>
+			<option value="leaf">Leaf</option>
+			<option value="drain">Drain</option>
+			<option value="clock">Clock thingo</option>
+			</select>
 		</div>
 
 		<div>
 			<h2>Other Other Options: </h2>
-			<label><input type="radio" name="other other options" value="none1">None</label>
-			<label><input type="radio" name="other other options" value="updrain">Updrain</label>
-			<label><input type="radio" name="other other options" value="circle dot">Circle dot</label>
-
+			<select name="other other options">
+			<option value="none1">None</option>
+			<option value="updrain">Updrain</option>
+			<option value="circle dot">Circle dot</option>
+			</select>
 		</div>
 
 		<!-- Manual time -->
@@ -82,7 +87,6 @@
 
 		<button type="submit">Submit</button>
 	</form>
-
 
 </body>
 </html>
