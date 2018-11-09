@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laundry</title>
+</head>
+<body>
+	<h1>Washing Machine Options</h1>
+	<form>
+
+		<!-- Net ID -->
+		<div>
+			<label>Net ID: <input type="text" name="Net ID: " placeholder="netid" required></label>
+		</div>
+
+		<!-- Building -->
+		<div>
+			<label>Building: </label>
+			<select name='building' required>
+				<option value="1">A1A</option><option value="2">A1B</option><option value="3">A1C</option><option value="4">A2A</option><option value="5">A2B</option><option value="6">A2C</option><option value="7">A5A</option><option value="8">A5B</option><option value="9">A5C</option><option value="10">A6A</option><option value="11">A6B</option><option value="12">A6C</option>
+			</select>
+		</div>
+
+		<!-- Washtype -->
+		<div>
+			<label>Washtype: </label>
+			<select name='washtype' required>
+				<option value="1">Cotton</option><option value="2">Mix/Synthetics</option><option value="3">Hand Wash</option><option value="4">Wool</option><option value="5">Sport</option><option value="6">Night wash</option><option value="7">Biowash</option><option value="8">Quick wash</option><option value="9">Rinse</option><option value="10">Softening</option><option value="11">Spin</option><option value="12">Perfect black</option><option value="13">Ultra white</option>
+			</select>
+		</div>
+
+		<!-- Temperature -->
+		<div>
+			<label>Temperature (Celsius): </label>
+			<label>90<input type="radio" name="temp" value="90"></label>
+			<label>60<input type="radio" name="temp" value="60"></label>
+			<label>40<input type="radio" name="temp" value="40"></label>
+			<label>30<input type="radio" name="temp" value="30"></label>
+			<label>15<input type="radio" name="temp" value="15"></label>
+			<label>cold<input type="radio" name="temp" value="cold"></label>
+		</div>
+
+		<!-- Other Options -->
+		<div>
+			<label>Other Options: </label>
+			<label>None<input type="radio" name="other options" value="none0"></label>
+			<label>Leaf<input type="radio" name="other options" value="leaf"></label>
+			<label>Drain<input type="radio" name="other options" value="drain"></label>
+			<label>Clock Thingo<input type="radio" name="other options" value="clock"></label>
+		</div>
+
+		<div>
+			<label>Other Other Options: </label>
+			<label>None<input type="radio" name="other other options" value="none1"></label>
+			<label>Updrain<input type="radio" name="other other options" value="updrain"></label>
+			<label>Circle dot<input type="radio" name="other other options" value="circle dot"></label>
+
+		</div>
+
+		<!-- Manual time -->
+		<div>
+			<label>Manual time: </label>
+			<select name='washtype' required>
+				<option value="1">0:30</option><option value="2">1:00</option><option value="3">1:30</option><option value="4">2:00</option><option value="5">2:30</option><option value="6">3:00</option><option value="7">3:30</option><option value="8">4:00</option>
+			</select>
+		</div>
+
+		<input type="submit">
+	</form>
+
+</body>
+</html>
