@@ -31,6 +31,7 @@ def delete_row(Machine_ID):
     print(str(Machine_ID)+"Is getting deleted")
     cursor.execute("DELETE FROM `Machines` WHERE `MachineID`=?", str(Machine_ID))
     conn.commit()
+    conn.close()
 
 def scheduler_check():
     sql_string="SELECT * FROM `Machines`"
