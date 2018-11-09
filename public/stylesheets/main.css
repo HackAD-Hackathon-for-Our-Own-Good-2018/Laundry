@@ -25,3 +25,98 @@
     .jumbotron .lang-logo img {
       max-width: 100%; }
 
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+
+  body {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  form {
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #8e8e90;
+    border-radius: 8px;
+  }
+
+  h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    color: #d1bfa7;
+  }
+
+  textarea,
+  select {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+  }
+
+  input[type="radio"] {
+    margin: 0 4px 8px 0;
+  }
+
+  select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+  }
+
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+
+  legend {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    color: #49494b;
+  }
+
+  label{
+    display: block;
+    margin-bottom: 8px;
+    color: #eeeeee;
+  }
+
+
+  @media screen and (min-width: 480px) {
+    form {
+      max-width: 480px;
+    }
+  }
+
+  button {
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #bd8c7d;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #d1bfa7;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+  }
