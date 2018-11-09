@@ -20,39 +20,38 @@
     </div>
   </div>
 
-<<<<<<< HEAD
 	<h1>Washing Machine Options</h1>
-	
-	<form id="formParameters" action="">
+
+	<form id="formParameters" action="" onsubmit="return false">
 		<!-- Net ID -->
-		<div id="netId" class = "form-group">
-			<h3><label for="netID input">Net ID</label></h3>
-			<input class="form-control" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
+		<div class = "form-group">
+			<h3><label for="input">Net ID</label></h3>
+			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
 		</div>
 
 		<!-- Building -->
-		<div id = "building" class="form-group">
+		<div class="form-group">
 				<h3><label for="exampleFormControlSelect1">Residential Building</label></h3>
-				<select class="form-control" id="buildingSelect" placeholder=".form-control-lg" required>
-					<option>A1A</option>
-					<option>A1B</option>
-					<option>A1C</option>
-					<option>A2A</option>
-					<option>A2B</option>
-					<option>A2C</option>
-					<option>A5A</option>
-					<option>A5B</option>
-					<option>A5C</option>
-					<option>A6A</option>
-					<option>A6B</option>
-					<option>A6C</option>
+				<select class="form-control" id="building" placeholder=".form-control-lg" required>
+					<option value="1">A1A</option>
+					<option value="2">A1B</option>
+					<option value="3">A1C</option>
+					<option value="4">A2A</option>
+					<option value="5">A2B</option>
+					<option value="6">A2C</option>
+					<option value="7">A5A</option>
+					<option value="8">A5B</option>
+					<option value="9">A5C</option>
+					<option value="10">A6A</option>
+					<option value="11">A6B</option>
+					<option value="12">A6C</option>
 				</select>
 			</div>
 
 		<!-- Washtype -->
-		<div class="form-group" id = "washtype">
+		<div class="form-group">
 				<h3><label for="washerselect">Washer Setting</label></h3>
-				<select multiple class="form-control" id="washerselect" placeholder=".form-control-lg" required>
+				<select multiple class="form-control" id="washtype" placeholder=".form-control-lg" required>
 						<option value="1">Cotton</option>
 						<option value="2">Mix/Synthetics</option>
 						<option value="3">Hand Wash</option>
@@ -69,52 +68,10 @@
 				</select>
 		</div>
 
-		<!-- Other Options 
+		<!-- Other Options
 		<div id="otherOptions">
 			<h3>Other Options: </h2>
 			<select name="other options">
-=======
-  <h1>Washing Machine Options</h1>
-	<form id="formParameters" action="" onsubmit="return false">
-		<!-- Net ID -->
-		<div>
-			<h2>Net ID: <input id="netID" type="text" name="Net ID: " placeholder="netid" required></h2>
-		</div>
-
-		<!-- Building -->
-		<div>
-			<h2>Building: </h2>
-			<select id="building" name='building' required>
-				<option value="1">A1A</option><option value="2">A1B</option><option value="3">A1C</option><option value="4">A2A</option><option value="5">A2B</option><option value="6">A2C</option><option value="7">A5A</option><option value="8">A5B</option><option value="9">A5C</option><option value="10">A6A</option><option value="11">A6B</option><option value="12">A6C</option>
-			</select>
-		</div>
-
-		<!-- Washtype -->
-		<div>
-			<h2>Washtype: </h2>
-			<select id="washtype" name='washtype' required>
-				<option value="1">Cotton</option><option value="2">Mix/Synthetics</option><option value="3">Hand Wash</option><option value="4">Wool</option><option value="5">Sport</option><option value="6">Night wash</option><option value="7">Biowash</option><option value="8">Quick wash</option><option value="9">Rinse</option><option value="10">Softening</option><option value="11">Spin</option><option value="12">Perfect black</option><option value="13">Ultra white</option>
-			</select>
-		</div>
-
-		<!-- Temperature -->
-		<div>
-			<h2>Temperature (Celsius): </h2>
-			<select id="temperature" name="temp">
-			<option value="90">90</option>
-			<option value="60">60</option>
-			<option value="40">40</option>
-			<option value="30">30</option>
-			<option value="15">15</option>
-			<option value="cold">Cold</option>
-			</select>
-		</div>
-
-		<!-- Other Options -->
-		<div>
-			<h2>Other Options: </h2>
-			<select id="otherOptions" name="other options">
->>>>>>> 0585985e2b0279b089d4ff8403e0d227ba21983b
 			<option value="none0">None</option>
 			<option value="leaf">Leaf</option>
 			<option value="drain">Drain</option>
@@ -122,9 +79,9 @@
 			</select>
 		</div>
 
-		<div>
+		<div id="otherOtherOptions">
 			<h2>Other Other Options: </h2>
-			<select id="otherOtherOptions" name="other other options">
+			<select name="other other options">
 			<option value="none1">None</option>
 			<option value="updrain">Updrain</option>
 			<option value="circle dot">Circle dot</option>
@@ -132,10 +89,9 @@
 		</div> -->
 
 		<!-- Manual time -->
-<<<<<<< HEAD
-		<div id="time">
+		<div>
 			<h3><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h3>
-			<select name='washtime'>
+			<select id="time" name='washtime'>
 				<option value="1">00:30</option>
 				<option value="2">00:45</option>
 				<option value="3">01:00</option>
@@ -147,27 +103,16 @@
 			</select>
 		</div>
 
-		<div><button type="submit" class = "btn btn-outline-danger">Submit</button></div>
+		<div><button type="submit" id="submitButton" class = "btn btn-info">Submit</button></div>
 
 
-		<div class="alert alert-success" role="alert" display none>
+		<div id="alert" class="alert alert-success" role="alert" style="display:none">
 				<h4 class="alert-heading">Well done!</h4>
 				<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
 				<hr>
 				<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-			</div>
-=======
-		<div >
-			<h2>Manual time: </h2>
-			<select id="time" name='washtype' required>
-				<option value="1">0:30</option><option value="2">1:00</option><option value="3">1:30</option><option value="4">2:00</option><option value="5">2:30</option><option value="6">3:00</option><option value="7">3:30</option><option value="8">4:00</option>
-			</select>
 		</div>
-
-		<button type="submit" id="submitButton">Submit</button>
->>>>>>> 0585985e2b0279b089d4ff8403e0d227ba21983b
 	</form>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -122,3 +122,8 @@
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
   }
+  
+  input[type="submit"] {
+    padding: 19px 39px 18px 39px;
+    border-radius: 5px;
+}

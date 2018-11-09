@@ -3,18 +3,12 @@ $(document).ready(function(){
     var netID = $('#netID').val();
     var building = $('#building').val();
     var washtype = $('#washtype').val();
-    var temperature = $('#temperature').val();
-    var otherOptions = $('#otherOptions').val();
-    var otherOtherOptions = $('#otherOtherOptions').val();
     var time = $('#time').val();
-
+    console.log('here');
     var data = {
       netID: netID,
       building: building,
       washtype: washtype,
-      temperature: temperature,
-      otherOptions: otherOptions,
-      otherOtherOptions: otherOtherOptions,
       time: time
     }
 
@@ -24,18 +18,19 @@ $(document).ready(function(){
 
     console.log(data);
     $.ajax({
-               type: 'post',
-               url: '/save',
-               contentType : "application/json",
-               data: JSON.stringify(data),
-               dataType: 'json',
-               error: function(err){
-                 console.log(err);
-               },
-               success: function (res) {
-                 console.log(res);
-                alert("We got your submission");
-               }
+         type: 'post',
+         url: '/save',
+         contentType : "application/json",
+         data: JSON.stringify(data),
+         dataType: 'json',
+         error: function(err){
+           console.log(err);
+         },
+         success: function (res) {
+           console.log(res);
+          // alert("We got your submission");
+          $('#alert').show();
+         }
        });
        // e.preventDefault();
      });
