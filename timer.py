@@ -3,6 +3,7 @@ import datetime
 import smtplib
 import email.utils
 from email.mime.text import MIMEText
+import sys
 
 
 conn=sqlite3.connect("tasks.db")
@@ -25,12 +26,6 @@ def send_email(email_recieve):
     print("Done")
     server.quit()
 
-def onstart(machine_ID,duration,uid):
-    sql_string="INSERT INTO `Machines` VALUES (?,?,?,?)"
-    now_dt=datetime.datetime.now()
-    cursor.execute(sql_string,(machine_ID,str(now_dt),now_dt+datetime.timedelta(minutes=duration),uid))
-    conn.commit()
-
 
 def delete_row(Machine_ID):
     cursor.execute("DELETE FROM `Machines` WHERE `MachineID`=?", str(Machine_ID))
@@ -41,8 +36,9 @@ def scheduler_check():
     cursor.execute(sql_string)
     rows=cursor.fetchall()
     for row in rows:
-        if datetime.datetime.strptime(row[2],"%Y-%m-%d %H:%M:%S.%f")<datetime.datetime.now():
+        if datetime.datetime.strptime(row[2],"%Y-%m-%d %H:%M:%S.%f")<datetime.datetime.utcnow():
             send_email(row[3])
             delete_row(row[0])
+
 
 scheduler_check()
