@@ -20,45 +20,57 @@
     </div>
   </div>
 
-  <h1>Washing Machine Options</h1>
+	<h1>Washing Machine Options</h1>
+	
 	<form id="formParameters" action="">
 		<!-- Net ID -->
-		<div id="netId">
-			<h2>Net ID: <input type="text" name="Net ID: " placeholder="netid" required></h2>
+		<div id="netId" class = "form-group">
+			<h3><label for="netID input">Net ID</label></h3>
+			<input class="form-control" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
 		</div>
 
 		<!-- Building -->
-		<div id="building">
-			<h2>Building: </h2>
-			<select name='building' required>
-				<option value="1">A1A</option><option value="2">A1B</option><option value="3">A1C</option><option value="4">A2A</option><option value="5">A2B</option><option value="6">A2C</option><option value="7">A5A</option><option value="8">A5B</option><option value="9">A5C</option><option value="10">A6A</option><option value="11">A6B</option><option value="12">A6C</option>
-			</select>
-		</div>
+		<div id = "building" class="form-group">
+				<h3><label for="exampleFormControlSelect1">Residential Building</label></h3>
+				<select class="form-control" id="buildingSelect" placeholder=".form-control-lg" required>
+					<option>A1A</option>
+					<option>A1B</option>
+					<option>A1C</option>
+					<option>A2A</option>
+					<option>A2B</option>
+					<option>A2C</option>
+					<option>A5A</option>
+					<option>A5B</option>
+					<option>A5C</option>
+					<option>A6A</option>
+					<option>A6B</option>
+					<option>A6C</option>
+				</select>
+			</div>
 
 		<!-- Washtype -->
-		<div id="washtype">
-			<h2>Washtype: </h2>
-			<select name='washtype' required>
-				<option value="1">Cotton</option><option value="2">Mix/Synthetics</option><option value="3">Hand Wash</option><option value="4">Wool</option><option value="5">Sport</option><option value="6">Night wash</option><option value="7">Biowash</option><option value="8">Quick wash</option><option value="9">Rinse</option><option value="10">Softening</option><option value="11">Spin</option><option value="12">Perfect black</option><option value="13">Ultra white</option>
-			</select>
+		<div class="form-group" id = "washtype">
+				<h3><label for="washerselect">Washer Setting</label></h3>
+				<select multiple class="form-control" id="washerselect" placeholder=".form-control-lg" required>
+						<option value="1">Cotton</option>
+						<option value="2">Mix/Synthetics</option>
+						<option value="3">Hand Wash</option>
+						<option value="4">Wool</option>
+						<option value="5">Sport</option>
+						<option value="6">Night wash</option>
+						<option value="7">Biowash</option>
+						<option value="8">Quick wash</option>
+						<option value="9">Rinse</option>
+						<option value="10">Softening</option>
+						<option value="11">Spin</option>
+						<option value="12">Perfect black</option>
+						<option value="13">Ultra white</option>
+				</select>
 		</div>
 
-		<!-- Temperature -->
-		<div id="temperature">
-			<h2>Temperature (Celsius): </h2>
-			<select name="temp">
-			<option value="90">90</option>
-			<option value="60">60</option>
-			<option value="40">40</option>
-			<option value="30">30</option>
-			<option value="15">15</option>
-			<option value="cold">Cold</option>
-			</select>
-		</div>
-
-		<!-- Other Options -->
+		<!-- Other Options 
 		<div id="otherOptions">
-			<h2>Other Options: </h2>
+			<h3>Other Options: </h2>
 			<select name="other options">
 			<option value="none0">None</option>
 			<option value="leaf">Leaf</option>
@@ -74,17 +86,32 @@
 			<option value="updrain">Updrain</option>
 			<option value="circle dot">Circle dot</option>
 			</select>
-		</div>
+		</div> -->
 
 		<!-- Manual time -->
 		<div id="time">
-			<h2>Manual time: </h2>
-			<select name='washtype' required>
-				<option value="1">0:30</option><option value="2">1:00</option><option value="3">1:30</option><option value="4">2:00</option><option value="5">2:30</option><option value="6">3:00</option><option value="7">3:30</option><option value="8">4:00</option>
+			<h3><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h3>
+			<select name='washtime'>
+				<option value="1">00:30</option>
+				<option value="2">00:45</option>
+				<option value="3">01:00</option>
+				<option value="4">01:15</option>
+				<option value="5">01:30</option>
+				<option value="6">01:45</option>
+				<option value="7">02:00</option>
+				<option value="8">02:30</option>
 			</select>
 		</div>
 
-		<button type="submit">Submit</button>
+		<div><button type="submit" class = "btn btn-outline-danger">Submit</button></div>
+
+
+		<div class="alert alert-success" role="alert" display none>
+				<h4 class="alert-heading">Well done!</h4>
+				<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+				<hr>
+				<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+			</div>
 	</form>
 
 </body>
