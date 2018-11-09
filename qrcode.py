@@ -20,8 +20,10 @@ def read():
     # decodes the QR code and returns True if successful 
     my_QR.decode() 
 
+    val = my_QR.data
+
     # prints the data 
-    print my_QR.data  
+    print val  
 
 
 write("A6A","Washer 1")
