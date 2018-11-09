@@ -17,6 +17,11 @@ $(document).ready(function(){
       otherOtherOptions: otherOtherOptions,
       time: time
     }
+
+    $('#formParameters').each(function(){
+      this.reset();
+    });
+
     console.log(data);
     $.ajax({
                type: 'post',
@@ -29,7 +34,7 @@ $(document).ready(function(){
                },
                success: function (res) {
                  console.log(res);
-                // alert("Email has been sent!");
+                alert("We got your submission");
                }
        });
        // e.preventDefault();
