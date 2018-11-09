@@ -10,7 +10,7 @@ conn=sqlite3.connect("tasks.db")
 cursor=conn.cursor()
 
 def send_email(email_recieve):
-
+    print("Sending email to "+ email_recieve)
     msg = MIMEText("This is a reminder that your laundry has been completed. Please go pick it up.")
     msg['From'] = email.utils.formataddr(("Laundry", "laundrynyuad@gmail.com"))
     msg['Subject'] = "Laundry Notification"
@@ -28,6 +28,7 @@ def send_email(email_recieve):
 
 
 def delete_row(Machine_ID):
+    print(str(Machine_ID)+"Is getting deleted")
     cursor.execute("DELETE FROM `Machines` WHERE `MachineID`=?", str(Machine_ID))
     conn.commit()
 
@@ -36,7 +37,9 @@ def scheduler_check():
     cursor.execute(sql_string)
     rows=cursor.fetchall()
     for row in rows:
+        print(row)
         if datetime.datetime.strptime(row[2],"%Y-%m-%d %H:%M:%S.%f")<datetime.datetime.utcnow():
+            print("Getting deleted")
             send_email(row[3])
             delete_row(row[0])
 
