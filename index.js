@@ -28,12 +28,13 @@ function sendEmail(data){
   var promise1 = new Promise(function(resolve, reject){
     var email = data.netID + '@nyu.edu';
     var msg = data.building;
-    var sendData = [email, msg];
+    var duration = '120';
+    var sendData = [email, msg, duration];
     resolve(sendData);
   });
 
   promise1.then(function(sendData){
-    const pythonProcess = spawn('python',["send_email.py", sendData[0], sendData[1]]);
+    const pythonProcess = spawn('python',["OnStart.py", sendData[1], sendData[2], sendData[0]]);
     pythonProcess.stdout.on('data', (data) => {
         // Do something with the data returned from python script
         console.log(data.toString());

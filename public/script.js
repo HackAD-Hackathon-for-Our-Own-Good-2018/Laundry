@@ -28,7 +28,8 @@ $(document).ready(function(){
          },
          success: function (res) {
            console.log(res);
-          alert("We got your submission");
+          // alert("We got your submission");
+          $('#alert').show();
          }
        });
        // e.preventDefault();
