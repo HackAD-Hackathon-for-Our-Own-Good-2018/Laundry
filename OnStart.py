@@ -24,6 +24,7 @@ cursor=conn.cursor()
 machine_ID=int(sys.argv[1])
 duration=int(sys.argv[2])
 uid=sys.argv[3]
+print(machine_ID, duration, uid)
 
 print(str(machine_ID)+"MACHINE ID")
 print(str(duration)+"This is the duration")
