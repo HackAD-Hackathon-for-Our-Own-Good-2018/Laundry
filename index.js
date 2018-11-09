@@ -28,7 +28,7 @@ function sendEmail(data){
   var promise1 = new Promise(function(resolve, reject){
     var email = data.netID + '@nyu.edu';
     var msg = data.building;
-    var duration = '120';
+    var duration = '1';
     var sendData = [email, msg, duration];
     resolve(sendData);
   });
