@@ -3,18 +3,12 @@ $(document).ready(function(){
     var netID = $('#netID').val();
     var building = $('#building').val();
     var washtype = $('#washtype').val();
-    var temperature = $('#temperature').val();
-    var otherOptions = $('#otherOptions').val();
-    var otherOtherOptions = $('#otherOtherOptions').val();
     var time = $('#time').val();
-
+    console.log('here');
     var data = {
       netID: netID,
       building: building,
       washtype: washtype,
-      temperature: temperature,
-      otherOptions: otherOptions,
-      otherOtherOptions: otherOtherOptions,
       time: time
     }
 

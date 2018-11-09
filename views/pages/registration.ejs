@@ -21,37 +21,37 @@
   </div>
 
 	<h1>Washing Machine Options</h1>
-	
-	<form id="formParameters" action="">
+
+	<form id="formParameters" action="" onsubmit="return false">
 		<!-- Net ID -->
-		<div id="netId" class = "form-group">
+		<div class = "form-group">
 			<h3><label for="netID input">Net ID</label></h3>
-			<input class="form-control" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
+			<input class="form-control" id="netId" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
 		</div>
 
 		<!-- Building -->
-		<div id = "building" class="form-group">
+		<div class="form-group">
 				<h3><label for="exampleFormControlSelect1">Residential Building</label></h3>
-				<select class="form-control" id="buildingSelect" placeholder=".form-control-lg" required>
-					<option>A1A</option>
-					<option>A1B</option>
-					<option>A1C</option>
-					<option>A2A</option>
-					<option>A2B</option>
-					<option>A2C</option>
-					<option>A5A</option>
-					<option>A5B</option>
-					<option>A5C</option>
-					<option>A6A</option>
-					<option>A6B</option>
-					<option>A6C</option>
+				<select class="form-control" id="building" placeholder=".form-control-lg" required>
+					<option value="1">A1A</option>
+					<option value="1">A1B</option>
+					<option value="1">A1C</option>
+					<option value="1">A2A</option>
+					<option value="1">A2B</option>
+					<option value="1">A2C</option>
+					<option value="1">A5A</option>
+					<option value="1">A5B</option>
+					<option value="1">A5C</option>
+					<option value="1">A6A</option>
+					<option value="1">A6B</option>
+					<option value="1">A6C</option>
 				</select>
 			</div>
 
 		<!-- Washtype -->
-		<div class="form-group" id = "washtype">
+		<div class="form-group">
 				<h3><label for="washerselect">Washer Setting</label></h3>
-				<select multiple class="form-control" id="washerselect" placeholder=".form-control-lg" required>
+				<select multiple class="form-control" id="washtype" placeholder=".form-control-lg" required>
 						<option value="1">Cotton</option>
 						<option value="2">Mix/Synthetics</option>
 						<option value="3">Hand Wash</option>
@@ -68,7 +68,7 @@
 				</select>
 		</div>
 
-		<!-- Other Options 
+		<!-- Other Options
 		<div id="otherOptions">
 			<h3>Other Options: </h2>
 			<select name="other options">
@@ -89,9 +89,9 @@
 		</div> -->
 
 		<!-- Manual time -->
-		<div id="time">
+		<div>
 			<h3><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h3>
-			<select name='washtime'>
+			<select id="time" name='washtime'>
 				<option value="1">00:30</option>
 				<option value="2">00:45</option>
 				<option value="3">01:00</option>
@@ -103,16 +103,16 @@
 			</select>
 		</div>
 
-		<div><button type="submit" class = "btn btn-info">Submit</button></div>
+		<div><button type="submit" id="submitButton" class = "btn btn-info">Submit</button></div>
 
 
-		<div class="alert alert-success" role="alert" display none>
+		<div class="alert alert-success" role="alert" style="display:none">
 				<h4 class="alert-heading">Well done!</h4>
 				<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
 				<hr>
 				<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 		</div>
 	</form>
-
+  <script src="script.js"></script>
 </body>
 </html>
