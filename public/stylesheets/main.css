@@ -39,15 +39,15 @@
   }
 
   form {
-    max-width: 300px;
+    max-width: 500px;
     margin: 10px auto;
-    padding: 10px 20px;
+    padding: 50px 20px;
     background: #8e8e90;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 
   h1 {
-    margin: 0 0 30px 0;
+    margin: 0 0 40px 0;
     text-align: center;
     color: #d1bfa7;
   }
@@ -56,11 +56,11 @@
   select {
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     height: auto;
     margin: 0;
     outline: 0;
-    padding: 15px;
+    padding: 17px;
     width: 100%;
     background-color: #e8eeef;
     color: #8a97a0;
@@ -90,7 +90,7 @@
   h2 {
     display: block;
     margin-bottom: 8px;
-    font-size: 1.2em;
+    font-size: 3em;
     color: #49494b;
   }
 
@@ -103,7 +103,7 @@
 
   @media screen and (min-width: 480px) {
     form {
-      max-width: 480px;
+      max-width: 700px;
     }
   }
 
