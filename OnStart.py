@@ -1,4 +1,10 @@
 import sys
+import sqlite3
+
+conn=sqlite3.connect("tasks.db")
+cursor=conn.cursor()
+
+
 machine_ID=sys.argv[1]
 duration=sys.argv[2]
 uid=sys.argv[3]
