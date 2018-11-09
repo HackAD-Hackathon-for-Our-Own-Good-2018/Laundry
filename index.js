@@ -2,19 +2,30 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const spawn = require("child_process").spawn;
-const pythonProcess = spawn('python',["script.py"]);
-const QrCode = require('qrcode-reader');
-const qr = new QrCode();
+//for python script
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/index.ejs', (req, res) => res.render('pages/index'))
+  .get('/av.ejs', (req, res) => res.render('pages/av'))
+  .get('/db.ejs', (req,res) => res.render('pages/db'))
+  .get('/registration.ejs', (req, res) => res.render('pages/registration'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
-pythonProcess.stdout.on('data', (data) => {
-    // Do something with the data returned from python script
-    console.log(data.toString());
-});
+// var promise1 = new Promise(function(resolve, reject){
+//   var email = 'ao1385@nyu.edu';
+//   var msg = 'msg';
+//   var sendData = [email, msg];
+//   resolve(sendData);
+// });
+//
+// promise1.then(function(sendData){
+//   const pythonProcess = spawn('python',["send_email.py", sendData[0], sendData[1]]);
+//   pythonProcess.stdout.on('data', (data) => {
+//       // Do something with the data returned from python script
+//       console.log(data.toString());
+//   });
+// });
