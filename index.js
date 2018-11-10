@@ -16,6 +16,9 @@ express()
   .get('/av.ejs', (req, res) => res.render('pages/av'))
   .get('/db.ejs', (req,res) => res.render('pages/db'))
   .get('/registration.ejs', (req, res) => res.render('pages/registration'))
+  .get('/save/av', (req,res) => {
+    res.send(JSON.stringify({result: availabilityData}));
+  })
   .post('/save', (req, res) =>{
     sendEmail(req.body);
     res.send(JSON.stringify({result:'OK'}));
@@ -28,10 +31,9 @@ express()
 function sendEmail(data){
   var promise1 = new Promise(function(resolve, reject){
     if(ready == true){
-      console.log(calculationData);
       for(var i = 0; i < calculationData.length; i++){
         //find the correct type
-        if(data.washtype == calculationData[i].washtype){
+        if(data.washtype == calculationData[i].material && calculationData[i].duration > 0){
           var email = data.netID + '@nyu.edu';
           var msg = data.building;
           var duration = calculationData[i].duration;
@@ -84,3 +86,17 @@ promise2.then(function(laundryData){
   calculationData = laundryData;
   ready = true;
 });
+
+
+var availabilityData = [];
+for(var i = 0; i < 12; i++){
+  var array = [];
+  for(var j = 0; j < 6; j++){
+    array[j] = 0;
+  }
+  var one = {
+    building: 'A1A',
+    result: array
+  };
+  availabilityData.push(one);
+}
