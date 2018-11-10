@@ -35,7 +35,21 @@ function sendEmail(data){
         //find the correct type
         if(data.washtype == calculationData[i].material && calculationData[i].duration > 0){
           var email = data.netID + '@nyu.edu';
-          var msg = data.building;
+          var msg;
+          if(data.building == 'A1A') msg = 1;
+          else if(data.building == 'A1B') msg = 2;
+          else if(data.building == 'A1C') msg = 3;
+          else if(data.building == 'A2A') msg = 4;
+          else if(data.building == 'A2B') msg = 5;
+          else if(data.building == 'A2C') msg = 6;
+          else if(data.building == 'A5A') msg = 7;
+          else if(data.building == 'A5B') msg = 8;
+          else if(data.building == 'A5c') msg = 9;
+          else if(data.building == 'A6A') msg = 10;
+          else if(data.building == 'A6B') msg = 11;
+          else if(data.building == 'A6C') msg = 12;
+          else msg = 0;
+
           var duration = calculationData[i].duration;
           var sendData = [email, msg, duration];
           resolve(sendData);
