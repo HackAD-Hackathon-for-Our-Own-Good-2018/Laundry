@@ -15,7 +15,7 @@ function checkAvailability(){
       console.log(err);
     },
     success: function(res){
-      console.log(res);
+      console.log(res.result);
       var buildings = res.result;
       for(var i = 0; i < buildings.length; i++){
         if(buildings[i].building == $('#building').val()){

@@ -22,22 +22,18 @@ express()
       var temp;
       pythonProcess.stdout.on('data', (data) => {
           // data returned from python script
-          if(data.toString() == 'ERROR'){
-            console.log('something went wrong');
-          }
           console.log(data.toString());
           temp = data.toString();
+          for(var i = 0; i < temp.length; i++){
+            availabilityData.push(temp[i][0]);
+          }
       });
-      for(var i = 0; i < temp.length; i++){
-        
-        availabilityData.push(temp[i][0]);
-      }
       resolve(availabilityData);
     });
     promise3.then(function(availabilityData){
       res.send(JSON.stringify({result: availabilityData}));
     });
-  });
+  })
   .post('/save', (req, res) =>{
     sendEmail(req.body);
     res.send(JSON.stringify({result:'OK'}));
