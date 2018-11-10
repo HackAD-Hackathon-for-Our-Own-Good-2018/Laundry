@@ -17,8 +17,27 @@ express()
   .get('/db.ejs', (req,res) => res.render('pages/db'))
   .get('/registration.ejs', (req, res) => res.render('pages/registration'))
   .get('/save/av', (req,res) => {
-    res.send(JSON.stringify({result: availabilityData}));
-  })
+    var promise3 = new Promise(function(resolve, reject){
+      const pythonProcess = spawn('python',["OnStart.py"]);
+      var temp;
+      pythonProcess.stdout.on('data', (data) => {
+          // data returned from python script
+          if(data.toString() == 'ERROR'){
+            console.log('something went wrong');
+          }
+          console.log(data.toString());
+          temp = data.toString();
+      });
+      for(var i = 0; i < temp.length; i++){
+        
+        availabilityData.push(temp[i][0]);
+      }
+      resolve(availabilityData);
+    });
+    promise3.then(function(availabilityData){
+      res.send(JSON.stringify({result: availabilityData}));
+    });
+  });
   .post('/save', (req, res) =>{
     sendEmail(req.body);
     res.send(JSON.stringify({result:'OK'}));
@@ -103,18 +122,3 @@ promise2.then(function(laundryData){
   calculationData = laundryData;
   ready = true;
 });
-
-
-var availabilityData = [];
-for(var i = 0; i < 12; i++){
-  var array = [];
-  for(var j = 0; j < 6; j++){
-    if(j%2 == 0) array[j] = 0;
-    else array[j] = 1;
-  }
-  var one = {
-    building: 'A1A',
-    result: array
-  };
-  availabilityData.push(one);
-}
