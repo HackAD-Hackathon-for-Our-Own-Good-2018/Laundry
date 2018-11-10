@@ -29,5 +29,9 @@ cursor=conn.cursor()
 sql_string="SELECT machine_id FROM machines"
 cursor.execute(sql_string)
 rows=cursor.fetchall()
-print(rows)
+return_str=""
+for row in rows:
+    return_str+=str(row[0])+","
+
+print(return_str[:-1])
 sys.stdout.flush()
