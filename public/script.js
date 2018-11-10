@@ -4,7 +4,6 @@ $(document).ready(function(){
     var building = $('#building').val();
     var washtype = $('#washtype').val();
     var time = $('#time').val();
-    console.log('here');
     var data = {
       netID: netID,
       building: building,
@@ -28,7 +27,8 @@ $(document).ready(function(){
          },
          success: function (res) {
            console.log(res);
-          alert("We got your submission");
+          // alert("We got your submission");
+          $('#alert').show();
          }
        });
        // e.preventDefault();

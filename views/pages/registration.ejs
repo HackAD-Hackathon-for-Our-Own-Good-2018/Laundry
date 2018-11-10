@@ -25,26 +25,26 @@
 	<form id="formParameters" action="" onsubmit="return false">
 		<!-- Net ID -->
 		<div class = "form-group">
-			<h3><label for="netID input">Net ID</label></h3>
-			<input class="form-control" id="netId" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
+			<h3><label for="input">Net ID</label></h3>
+			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
 		</div>
 
 		<!-- Building -->
 		<div class="form-group">
 				<h3><label for="exampleFormControlSelect1">Residential Building</label></h3>
 				<select class="form-control" id="building" placeholder=".form-control-lg" required>
-					<option value="1">A1A</option>
-					<option value="1">A1B</option>
-					<option value="1">A1C</option>
-					<option value="1">A2A</option>
-					<option value="1">A2B</option>
-					<option value="1">A2C</option>
-					<option value="1">A5A</option>
-					<option value="1">A5B</option>
-					<option value="1">A5C</option>
-					<option value="1">A6A</option>
-					<option value="1">A6B</option>
-					<option value="1">A6C</option>
+					<option value="A1A">A1A</option>
+					<option value="A1B">A1B</option>
+					<option value="A1C">A1C</option>
+					<option value="A2A">A2A</option>
+					<option value="A2B">A2B</option>
+					<option value="A2C">A2C</option>
+					<option value="A5A">A5A</option>
+					<option value="A5B">A5B</option>
+					<option value="A5C">A5C</option>
+					<option value="A6A">A6A</option>
+					<option value="A6B">A6B</option>
+					<option value="A6C">A6C</option>
 				</select>
 			</div>
 
@@ -52,19 +52,19 @@
 		<div class="form-group">
 				<h3><label for="washerselect">Washer Setting</label></h3>
 				<select multiple class="form-control" id="washtype" placeholder=".form-control-lg" required>
-						<option value="1">Cotton</option>
-						<option value="2">Mix/Synthetics</option>
-						<option value="3">Hand Wash</option>
-						<option value="4">Wool</option>
-						<option value="5">Sport</option>
-						<option value="6">Night wash</option>
-						<option value="7">Biowash</option>
-						<option value="8">Quick wash</option>
-						<option value="9">Rinse</option>
-						<option value="10">Softening</option>
-						<option value="11">Spin</option>
-						<option value="12">Perfect black</option>
-						<option value="13">Ultra white</option>
+						<option value="Cotton">Cotton</option>
+						<option value="Mix/Synthetics">Mix/Synthetics</option>
+						<option value="HandWash">Hand Wash</option>
+						<option value="Wool">Wool</option>
+						<option value="Sport">Sport</option>
+						<option value="NightWash">Night wash</option>
+						<option value="Biowash">Biowash</option>
+						<option value="QuickWash">Quick wash</option>
+						<option value="Rinse">Rinse</option>
+						<option value="Softening">Softening</option>
+						<option value="Spin">Spin</option>
+						<option value="PerfectBlack">Perfect black</option>
+						<option value="UltraWhite">Ultra white</option>
 				</select>
 		</div>
 
@@ -106,13 +106,14 @@
 		<div><button type="submit" id="submitButton" class = "btn btn-info">Submit</button></div>
 
 
-		<div class="alert alert-success" role="alert" style="display:none">
+		<div id="alert" class="alert alert-success" role="alert" style="display:none">
 				<h4 class="alert-heading">Well done!</h4>
 				<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
 				<hr>
 				<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 		</div>
 	</form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
