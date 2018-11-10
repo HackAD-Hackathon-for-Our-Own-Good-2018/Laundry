@@ -20,29 +20,40 @@ express()
     checkAvailability();
     function checkAvailability(){
       var availabilityData = [];
+      const pythonProcess = spawn('python',["check_available.py"]);
+      var result;
       var promise3 = new Promise(function(resolve, reject){
-        const pythonProcess = spawn('python',["check_available.py"]);
-        var result;
+        var done = false;
         pythonProcess.stdout.on('data', (data) => {
+            console.log('hereeee');
             // data returned from python script
             // console.log(data.toString());
-            result = data.toString();
-            console.log(result);
-            for(var i = 0; i < result.length; i++){
-              var array = [];
-              for(var j = 0; j < 6; j++){
-                if(j%2 == 0) array[j] = 0;
-                else array[j] = 1;
-              }
+            myData = data.toString().split(',');
+            for(var i = 0; i < myData.length - 1; i++){
+              var b;
+              if(myData[i][0] < 6) b = 'A1A';
+              else if(myData[i][0] < 12) b = 'A1B';
+              else if(myData[i][0] < 18) b = 'A1C';
+              else if(myData[i][0] < 24) b = 'A2A';
+              else if(myData[i][0] < 30) b = 'A2B';
+              else if(myData[i][0] < 36) b = 'A2C';
+              else if(myData[i][0] < 42) b = 'A5A';
+              else if(myData[i][0] < 48) b = 'A5B';
+              else if(myData[i][0] < 54) b = 'A5C';
+              else if(myData[i][0] < 60) b = 'A6A';
+              else if(myData[i][0] < 66) b = 'A6B';
+              else b = 'A6C';
+
               var one = {
-                building: 'A1A',
-                machineID: result[i][0],
+                building: b,
+                machineID: myData[i][0],
                 result: array
               };
               availabilityData.push(one);
-              resolve(availabilityData);
             }
+            done = true;
         });
+        if(done == true) resolve(availabilityData);
       });
       promise3.then(function(availabilityData){
         res.send(JSON.stringify({result: availabilityData}));
