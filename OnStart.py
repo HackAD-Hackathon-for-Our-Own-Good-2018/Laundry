@@ -18,8 +18,8 @@ uid=sys.argv[3]
 print(machine_ID, duration, uid)
 
 
-#url= urlparse(os.environ['DATABASE_URL'])
-url = urlparse("postgres://vteynwmfbgkmrk:4c42cad3159fafc6dafb1e14f1c8654e60ea6097284e8e2cd60418cd0fdf26c7@ec2-54-83-27-162.compute-1.amazonaws.com:5432/dce9rsp8t7n6cm")
+url= urlparse(os.environ['DATABASE_URL'])
+#url = urlparse("postgres://vteynwmfbgkmrk:4c42cad3159fafc6dafb1e14f1c8654e60ea6097284e8e2cd60418cd0fdf26c7@ec2-54-83-27-162.compute-1.amazonaws.com:5432/dce9rsp8t7n6cm")
 print(url)
 dbname = url.path[1:]
 user = url.username
@@ -45,10 +45,13 @@ print(cursor)
 print(str(machine_ID)+"MACHINE ID")
 print(str(duration)+"This is the duration")
 
-sql_string="INSERT INTO machines VALUES (%s,%s,%s,%s)"
-now_dt=datetime.datetime.utcnow()
-cursor.execute(sql_string,(machine_ID,str(now_dt),now_dt+datetime.timedelta(minutes=duration),uid))
-conn.commit()
+try:
+    sql_string="INSERT INTO machines VALUES (%s,%s,%s,%s)"
+    now_dt=datetime.datetime.utcnow()
+    cursor.execute(sql_string,(machine_ID,str(now_dt),now_dt+datetime.timedelta(minutes=duration),uid))
+    conn.commit()
+    print("Recieved data")
+except:
+    print("ERROR")
 
-print("Recieved data")
 sys.stdout.flush()

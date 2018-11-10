@@ -36,20 +36,20 @@ function sendEmail(data){
         if(data.washtype == calculationData[i].material && calculationData[i].duration > 0){
           var email = data.netID + '@nyu.edu';
           var msg;
-          if(data.building == 'A1A') msg = 1;
-          else if(data.building == 'A1B') msg = 2;
-          else if(data.building == 'A1C') msg = 3;
-          else if(data.building == 'A2A') msg = 4;
-          else if(data.building == 'A2B') msg = 5;
-          else if(data.building == 'A2C') msg = 6;
-          else if(data.building == 'A5A') msg = 7;
-          else if(data.building == 'A5B') msg = 8;
-          else if(data.building == 'A5c') msg = 9;
-          else if(data.building == 'A6A') msg = 10;
-          else if(data.building == 'A6B') msg = 11;
-          else if(data.building == 'A6C') msg = 12;
-          else msg = 0;
-
+          if(data.building == 'A1A') msg = 0;
+          else if(data.building == 'A1B') msg = 6;
+          else if(data.building == 'A1C') msg = 12;
+          else if(data.building == 'A2A') msg = 18;
+          else if(data.building == 'A2B') msg = 24;
+          else if(data.building == 'A2C') msg = 30;
+          else if(data.building == 'A5A') msg = 36;
+          else if(data.building == 'A5B') msg = 42;
+          else if(data.building == 'A5c') msg = 48;
+          else if(data.building == 'A6A') msg = 54;
+          else if(data.building == 'A6B') msg = 60;
+          else if(data.building == 'A6C') msg = 66;
+          else msg = 72;
+          msg = msg + 1;
           var duration = calculationData[i].duration;
           var sendData = [email, msg, duration];
           resolve(sendData);
@@ -61,11 +61,13 @@ function sendEmail(data){
   });
 
   promise1.then(function(sendData){
-    console.log(sendData);
     const pythonProcess = spawn('python',["OnStart.py", sendData[1], sendData[2], sendData[0]]);
     pythonProcess.stdout.on('data', (data) => {
         // data returned from python script
         console.log(data.toString());
+        if(data.toString() == 'ERROR'){
+          console.log('something went wrong');
+        }
     });
   });
 }
@@ -107,7 +109,8 @@ var availabilityData = [];
 for(var i = 0; i < 12; i++){
   var array = [];
   for(var j = 0; j < 6; j++){
-    array[j] = 0;
+    if(j%2 == 0) array[j] = 0;
+    else array[j] = 1;
   }
   var one = {
     building: 'A1A',
