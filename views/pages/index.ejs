@@ -16,7 +16,7 @@
       <img src="/lang-logo.png">
     </a>
 
-    <h1>NYUAD Laundry Planner</h1>
+    <h1 style="font-family:Impact, Charcoal, sans-serif" >NYUAD Laundry Planner</h1>
     <p>Welcome to your NYUAD Laundry Planner. We hope this app will help you organize better your laundry timings, avoid unplesant events and check the availability of the equipment.</p>
 
 
@@ -25,37 +25,342 @@
     <a type="button" class="btn btn-lg btn-warning" href="av.ejs"><span class="glyphicon glyphicon-flash"></span> Check availability </a>
   </div>
 </div>
+
+
 <div class="container">
   <hr>
   <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How use this app</h3>
-      <ul>
-        <li> Step1 </li>
-        <li> Step2 </li>
-        <li> Step3</li>
+    <div class="col-md-12"        >
+      <h3 style="font-size:300%;color:#532F8C"><span class="glyphicon glyphicon-info-sign"></span> How use this app</h3>
+      <ul style="font-size:200%">
+        <li> Please sign in the equipment correctly every time you use it </li>
+        <li> Press the button Registration to sign in the equipment you are using </li>
+        <li> Complete with your netID and the correct information of the machine you use</li>
+        <li> In order to see which machines are available go to Check Availability </li>
+
       </ul>
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> Guidelines of washing modes</h3>
+    <div class="col-md-12" >
+      <h3 style="font-size:300%;color:#532F8C"><span class="glyphicon glyphicon-info-sign"></span> Washing modes</h3>
       <ul>
-        <li> Step1 </li>
-        <li> Step2 </li>
-        <li> Step3</li>
+
       </ul>
+
+      <table id="programs" >
+        <col width="500">
+        <col width="500">
+        <tr style="font-size:200%">
+          <td >  <div>
+            <input type="checkbox" class="read-more-state" id="post-1" />
+
+            <ul class="read-more-wrap">
+              <li>Mix/Synthetics</li>
+              <li class="read-more-target">Synthetic programs, also called 'easy care', are designed for non-cotton garments, such as clothes made from polyester and viscose, that need a slightly more delicate wash.</li>
+            </ul>
+            <label for="post-1" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-2" />
+
+          <ul class="read-more-wrap">
+            <li>Cotton</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-2" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td>
+            <div>
+            <input type="checkbox" class="read-more-state" id="post-3" />
+
+            <ul class="read-more-wrap">
+              <li>HandWash</li>
+              <li class="read-more-target">This is what you should use this option for.</li>
+            </ul>
+            <label for="post-3" class="read-more-trigger"></label>
+
+            </div>
+
+          </td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-4" />
+
+          <ul class="read-more-wrap">
+            <li>Wool</li>
+            <li class="read-more-target">These are typically low temperature programs that have minimum drum rotation during the wash to keep the garments from being damaged, similar to synthetics programs.</li>
+          </ul>
+          <label for="post-4" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-5" />
+
+          <ul class="read-more-wrap">
+            <li>Sport</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-5" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-6" />
+
+          <ul class="read-more-wrap">
+            <li>NightWash</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-6" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-7" />
+
+          <ul class="read-more-wrap">
+            <li>Biowash</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-7" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-8" />
+
+          <ul class="read-more-wrap">
+            <li>Softening</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-8" class="read-more-trigger"></label>
+
+          </div>
+</td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-9" />
+
+          <ul class="read-more-wrap">
+            <li>Spin </li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-9" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-10" />
+
+          <ul class="read-more-wrap">
+            <li>Rinse</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-10" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-11" />
+
+          <ul class="read-more-wrap">
+            <li>PerfectBlack </li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-11" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-12" />
+
+          <ul class="read-more-wrap">
+            <li>UltraWhite</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-12" class="read-more-trigger"></label>
+
+          </div>
+</td>
+
+        </tr>
+
+      </table>
+
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> Guidelines of drying modes</h3>
+
+    <div class="col-md-12" >
+      <h3 style="font-size:300%;color:#532F8C"><span class="glyphicon glyphicon-info-sign"></span> Dryer Options</h3>
       <ul>
-        <li> Step1 </li>
-        <li> Step2 </li>
-        <li> Step3</li>
+
       </ul>
+
+      <table id="programs1">
+        <col width="500">
+        <col width="500">
+        <tr style="font-size:200%">
+          <td>  <div>
+            <input type="checkbox" class="read-more-state" id="post-13" />
+
+            <ul class="read-more-wrap">
+            <li >  Mix/Synthetics  </li> 
+              <li class="read-more-target">Information</li>
+            </ul>
+            <label for="post-13" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-14" />
+
+          <ul class="read-more-wrap">
+            <li>Cotton</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-14" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td>
+            <div>
+            <input type="checkbox" class="read-more-state" id="post-15" />
+
+            <ul class="read-more-wrap">
+              <li>HandWash</li>
+              <li class="read-more-target">This is what you should use this option for.</li>
+            </ul>
+            <label for="post-15" class="read-more-trigger"></label>
+
+            </div>
+
+          </td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-16" />
+
+          <ul class="read-more-wrap">
+            <li>Wool</li>
+            <li class="read-more-target">Information</li>
+          </ul>
+          <label for="post-16" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-17" />
+
+          <ul class="read-more-wrap">
+            <li>Sport</li>
+            <li class="read-more-target">Information</li>
+          </ul>
+          <label for="post-17" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-18" />
+
+          <ul class="read-more-wrap">
+            <li>NightWash</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-18" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-19" />
+
+          <ul class="read-more-wrap">
+            <li>Biowash</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-19" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-20" />
+
+          <ul class="read-more-wrap">
+            <li>Softening</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-20" class="read-more-trigger"></label>
+
+          </div>
+    </td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-21" />
+
+          <ul class="read-more-wrap">
+            <li>Spin </li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-21" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-22" />
+
+          <ul class="read-more-wrap">
+            <li>Rinse</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-22" class="read-more-trigger"></label>
+
+          </div></td>
+
+        </tr>
+        <tr style="font-size:200%">
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-23" />
+
+          <ul class="read-more-wrap">
+            <li>PerfectBlack </li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-23" class="read-more-trigger"></label>
+
+          </div></td>
+          <td><div>
+          <input type="checkbox" class="read-more-state" id="post-24" />
+
+          <ul class="read-more-wrap">
+            <li>UltraWhite</li>
+            <li class="read-more-target">This is what you should use this option for.</li>
+          </ul>
+          <label for="post-24" class="read-more-trigger"></label>
+
+          </div>
+    </td>
+
+        </tr>
+
+      </table>
+
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Why should you use the Laundry App</h3>
-      <ul>
-        <li>Do it TEXT TEXT TEXT</li>
+
+
+    <div class="col-md-12" >
+      <h3 style="font-size:300%;color:#532F8C"><span class="glyphicon glyphicon-link"></span> Have A Happy Laundry Day!</h3>
+      <ul style="font-size:200%">
+        <li>We hope that our app makes your laundry experience more plesant</li>
+        <li>We hope you are respecting your community and don't break the rules</li>
+        <li>We hope we have minimized disturbing incidents</li>
 
       </ul>
 
