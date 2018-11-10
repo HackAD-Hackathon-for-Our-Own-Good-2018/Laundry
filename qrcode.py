@@ -15,7 +15,9 @@ def write(building,washer):
 
 def read():
     # Python 2.x program to Scan and Read a QR code 
-    my_QR = QR(filename = "/home/jumana/Desktop/first.png") 
+    my_QR = QR(filename = "/home/jumana/Desktop/second.png") 
+
+
 
     # decodes the QR code and returns True if successful 
     my_QR.decode() 
@@ -26,5 +28,5 @@ def read():
     print val  
 
 
-write("A6A","Washer 1")
+write("A2A","Washer 10")
 read()
