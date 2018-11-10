@@ -12,7 +12,7 @@
       </a>
 
       <h1 style="font-family:Impact, Charcoal, sans-serif">NYUAD Laundry Planner</h1>
-      <p>Welcome to your NYUAD Laundry Planner. We hope this app will help you organize better your laundry timings, avoid unplesant events and check the availability of the equipment.</p>
+      <p style="font-size:200%">Welcome to your NYUAD Laundry Planner. We hope this app will help you organize better your laundry timings, avoid unplesant events and check the availability of the equipment.</p>
 
       <a type="button" class="btn btn-lg btn-warning" href="index.ejs" ><span class="glyphicon glyphicon-flash"></span> Home </a>
       <a type="button" class="btn btn-lg btn-warning" href="registration.ejs"><span class="glyphicon glyphicon-flash"></span> Registration </a>
@@ -48,7 +48,20 @@
 					<option value="A6C">A6C</option>
 				</select>
 			</div>
-
+		<div>
+				<h2><label for = "washerNumber">Machine Number</label></h2>
+				<select class = "form-control-lg" id="washnumber" name='washtime' required>
+					<option disabled selected value> -- choose your machine -- </option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
 		<!-- Washtype -->
 		<div class="form-group">
 				<h2><label for="washerselect">Washer Setting</label></h2>
@@ -90,20 +103,6 @@
 		</div> -->
 
 		<!-- Manual time -->
-		<div>
-			<h2><label for = "washerNumber">Machine Number</label></h2>
-			<select class = "form-control-lg" id="washnumber" name='washtime' required>
-				<option disabled selected value> -- choose your machine -- </option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-			</select>
-		</div>
 
 		<div>
 			<h2><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h2>
