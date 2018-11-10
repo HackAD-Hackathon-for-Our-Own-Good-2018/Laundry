@@ -35,7 +35,21 @@ function sendEmail(data){
         //find the correct type
         if(data.washtype == calculationData[i].material && calculationData[i].duration > 0){
           var email = data.netID + '@nyu.edu';
-          var msg = data.building;
+          var msg;
+          if(data.building == 'A1A') msg = 0;
+          else if(data.building == 'A1B') msg = 6;
+          else if(data.building == 'A1C') msg = 12;
+          else if(data.building == 'A2A') msg = 18;
+          else if(data.building == 'A2B') msg = 24;
+          else if(data.building == 'A2C') msg = 30;
+          else if(data.building == 'A5A') msg = 36;
+          else if(data.building == 'A5B') msg = 42;
+          else if(data.building == 'A5c') msg = 48;
+          else if(data.building == 'A6A') msg = 54;
+          else if(data.building == 'A6B') msg = 60;
+          else if(data.building == 'A6C') msg = 66;
+          else msg = 72;
+          msg = msg + 1;
           var duration = calculationData[i].duration;
           var sendData = [email, msg, duration];
           resolve(sendData);
@@ -51,6 +65,9 @@ function sendEmail(data){
     pythonProcess.stdout.on('data', (data) => {
         // data returned from python script
         console.log(data.toString());
+        if(data.toString() == 'ERROR'){
+          console.log('something went wrong');
+        }
     });
   });
 }
@@ -92,7 +109,8 @@ var availabilityData = [];
 for(var i = 0; i < 12; i++){
   var array = [];
   for(var j = 0; j < 6; j++){
-    array[j] = 0;
+    if(j%2 == 0) array[j] = 0;
+    else array[j] = 1;
   }
   var one = {
     building: 'A1A',
