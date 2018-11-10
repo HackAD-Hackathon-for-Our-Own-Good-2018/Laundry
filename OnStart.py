@@ -1,10 +1,10 @@
 import sys
 import psycopg2
-# import urllib.parse as urlparse
-try:
-    from urllib.parse import urlparse
-except ImportError:
-     from urlparse import urlparse
+import urllib.parse as urlparse
+# try:
+#     from urllib.parse import urlparse
+# except ImportError:
+     # from urlparse import urlparse
 import datetime
 import os
 
@@ -33,6 +33,7 @@ conn = psycopg2.connect(
             host=host,
             port=port
             )
+print('here')
 
 cursor=conn.cursor()
 
