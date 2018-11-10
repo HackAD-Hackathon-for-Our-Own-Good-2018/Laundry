@@ -47,6 +47,7 @@ function sendEmail(data){
   });
 
   promise1.then(function(sendData){
+    console.log(sendData);
     const pythonProcess = spawn('python',["OnStart.py", sendData[1], sendData[2], sendData[0]]);
     pythonProcess.stdout.on('data', (data) => {
         // data returned from python script
