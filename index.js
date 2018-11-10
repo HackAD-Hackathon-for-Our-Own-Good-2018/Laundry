@@ -26,19 +26,21 @@ express()
 
 //send info to the database
 function sendEmail(data){
-  // console.log(data);
-
   var promise1 = new Promise(function(resolve, reject){
     if(ready == true){
-      var email = data.netID + '@nyu.edu';
-      var msg = data.building;
-      var duration = '1';
-      var sendData = [email, msg, duration];
-      console.log(sendData);
-      resolve(sendData);
-    }
-    else{
-      console.log('need to time for processing');
+      console.log(calculationData);
+      for(var i = 0; i < calculationData.length; i++){
+        //find the correct type
+        if(data.washtype == calculationData[i].washtype){
+          var email = data.netID + '@nyu.edu';
+          var msg = data.building;
+          var duration = calculationData[i].duration;
+          var sendData = [email, msg, duration];
+          resolve(sendData);
+          break;
+        }
+      }
+
     }
   });
 
@@ -61,7 +63,7 @@ var promise2 = new Promise(function(resolve, reject){
     var laundryData = [];
     var cut = data.split('\n');
     console.log('OK: ' + filename);
-    console.log(cut.length)
+    // console.log(cut.length)
     for(var i = 0; i < cut.length - 1; i++){
       var cut2 = cut[i].split(' ');
       entry = {
