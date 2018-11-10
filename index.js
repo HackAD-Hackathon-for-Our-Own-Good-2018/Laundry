@@ -17,22 +17,37 @@ express()
   .get('/db.ejs', (req,res) => res.render('pages/db'))
   .get('/registration.ejs', (req, res) => res.render('pages/registration'))
   .get('/save/av', (req,res) => {
-    var promise3 = new Promise(function(resolve, reject){
-      const pythonProcess = spawn('python',["OnStart.py"]);
-      var temp;
-      pythonProcess.stdout.on('data', (data) => {
-          // data returned from python script
-          console.log(data.toString());
-          temp = data.toString();
-          for(var i = 0; i < temp.length; i++){
-            availabilityData.push(temp[i][0]);
-          }
+    checkAvailability();
+    function checkAvailability(){
+      var availabilityData = [];
+      var promise3 = new Promise(function(resolve, reject){
+        const pythonProcess = spawn('python',["check_available.py"]);
+        var result;
+        pythonProcess.stdout.on('data', (data) => {
+            // data returned from python script
+            // console.log(data.toString());
+            result = data.toString();
+            console.log(result);
+            for(var i = 0; i < result.length; i++){
+              var array = [];
+              for(var j = 0; j < 6; j++){
+                if(j%2 == 0) array[j] = 0;
+                else array[j] = 1;
+              }
+              var one = {
+                building: 'A1A',
+                machineID: result[i][0],
+                result: array
+              };
+              availabilityData.push(one);
+              resolve(availabilityData);
+            }
+        });
       });
-      resolve(availabilityData);
-    });
-    promise3.then(function(availabilityData){
-      res.send(JSON.stringify({result: availabilityData}));
-    });
+      promise3.then(function(availabilityData){
+        res.send(JSON.stringify({result: availabilityData}));
+      });
+    };
   })
   .post('/save', (req, res) =>{
     sendEmail(req.body);

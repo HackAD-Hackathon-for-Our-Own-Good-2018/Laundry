@@ -26,13 +26,13 @@
 		<!-- Net ID -->
 		<div class = "form-group" >
 			<h2><label for="input">Net ID</label></h2>
-			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" style="font-size: 175%" required>
+			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" style="font-size: 175%">
 		</div>
 
 		<!-- Building -->
 		<div class="form-group">
 				<h2><label for="exampleFormControlSelect1">Residential Building</label></h2>
-				<select class="form-control-lg" id="building" required>
+				<select class="form-control-lg" id="building">
 					<option disabled selected value> -- select your building -- </option>
 					<option value="A1A">A1A</option>
 					<option value="A1B">A1B</option>
@@ -50,7 +50,7 @@
 			</div>
 		<div>
 				<h2><label for = "washerNumber">Machine Number</label></h2>
-				<select class = "form-control-lg" id="washnumber" name='washtime' required>
+				<select class = "form-control-lg" id="washnumber" name='washtime'>
 					<option disabled selected value> -- choose your machine -- </option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -120,7 +120,7 @@
 
 		<div><button type="submit" id="submitButton" class = "btn btn-info">Submit</button></div>
 
-		<div class="alert alert-danger" role="alert" style = "text-align: center">
+		<div id="incorrect" class="alert alert-danger" role="alert" style = "text-align: center; display:none">
 				<h4>Error! Form filled incorrectly!</h4>
 		</div>
 
@@ -128,7 +128,6 @@
 				<h4 class="alert-heading">Laundry Form Submitted!</h4>
 				<p>You will be notified by email when your laundry is ready to be picked up.</p>
 				<hr>
-				<p class="mb-0">Please be respectful of your community.</p>
 		</div>
 	</form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
