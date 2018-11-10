@@ -14,25 +14,26 @@
       <h1>NYUAD Laundry Planner</h1>
       <p>Welcome to your NYUAD Laundry Planner. We hope this app will help you organize better your laundry timings, avoid unplesant events and check the availability of the equipment.</p>
 
-      <a type="button" class="btn btn-lg btn-default" href="index.ejs" ><span class="glyphicon glyphicon-flash"></span> Home </a>
-      <a type="button" class="btn btn-lg btn-default" href="registration.ejs"><span class="glyphicon glyphicon-flash"></span> Registration </a>
-      <a type="button" class="btn btn-lg btn-default" href="av.ejs"><span class="glyphicon glyphicon-flash"></span> Check availability </a>
+      <a type="button" class="btn btn-lg btn-warning" href="index.ejs" ><span class="glyphicon glyphicon-flash"></span> Home </a>
+      <a type="button" class="btn btn-lg btn-warning" href="registration.ejs"><span class="glyphicon glyphicon-flash"></span> Registration </a>
+      <a type="button" class="btn btn-lg btn-warning" href="av.ejs"><span class="glyphicon glyphicon-flash"></span> Check availability </a>
     </div>
   </div>
 
-	<h1>Washing Machine Options</h1>
+	<h2 style="color:rgb(216, 111, 0); text-align: center; font-size: 300%">Washing Machine Options</h2>
 
 	<form id="formParameters" action="" onsubmit="return false">
 		<!-- Net ID -->
-		<div class = "form-group">
-			<h3><label for="input">Net ID</label></h3>
-			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" required>
+		<div class = "form-group" >
+			<h2><label for="input">Net ID</label></h2>
+			<input class="form-control" id="netID" placeholder="Enter your Net ID" placeholder=".form-control-lg" style="font-size: 175%" required>
 		</div>
 
 		<!-- Building -->
 		<div class="form-group">
-				<h3><label for="exampleFormControlSelect1">Residential Building</label></h3>
-				<select class="form-control" id="building" placeholder=".form-control-lg" required>
+				<h2><label for="exampleFormControlSelect1">Residential Building</label></h2>
+				<select class="form-control-lg" id="building" required>
+					<option disabled selected value> -- select your building -- </option>
 					<option value="A1A">A1A</option>
 					<option value="A1B">A1B</option>
 					<option value="A1C">A1C</option>
@@ -50,8 +51,8 @@
 
 		<!-- Washtype -->
 		<div class="form-group">
-				<h3><label for="washerselect">Washer Setting</label></h3>
-				<select multiple class="form-control" id="washtype" placeholder=".form-control-lg" required>
+				<h2><label for="washerselect">Washer Setting</label></h2>
+				<select multiple class="form-control-lg" id="washtype"  required>
 						<option value="Cotton">Cotton</option>
 						<option value="Mix/Synthetics">Mix/Synthetics</option>
 						<option value="HandWash">Hand Wash</option>
@@ -90,8 +91,23 @@
 
 		<!-- Manual time -->
 		<div>
-			<h3><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h3>
-			<select id="time" name='washtime'>
+			<h2><label for = "washerNumber">Machine Number</label></h2>
+			<select class = "form-control-lg" id="washnumber" name='washtime' required>
+				<option disabled selected value> -- choose your machine -- </option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+			</select>
+		</div>
+
+		<div>
+			<h2><label for = "washerselect">Manual Time Entry <i>(hours:minutes)</i></label></h2>
+			<select class = "form-control-lg" id="time" name='washtime'>
 				<option value="1">00:30</option>
 				<option value="2">00:45</option>
 				<option value="3">01:00</option>
@@ -105,12 +121,15 @@
 
 		<div><button type="submit" id="submitButton" class = "btn btn-info">Submit</button></div>
 
+		<div class="alert alert-danger" role="alert" style = "text-align: center">
+				<h4>Error! Form filled incorrectly!</h4>
+		</div>
 
 		<div id="alert" class="alert alert-success" role="alert" style="display:none">
-				<h4 class="alert-heading">Well done!</h4>
-				<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+				<h4 class="alert-heading">Laundry Form Submitted!</h4>
+				<p>You will be notified by email when your laundry is ready to be picked up.</p>
 				<hr>
-				<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+				<p class="mb-0">Please be respectful of your community.</p>
 		</div>
 	</form>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
